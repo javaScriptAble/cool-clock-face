@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Kanit:wght@300;400;500&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kanit", sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #2c3e50, #bdc3c7, #2c3e50);
+  min-height: 100vh;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  height: 500px;
+  width: 500px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 8px solid #000;
+  box-shadow: 0 12px 20px 10px rgba(0, 0, 0, 0.45),
+    0 0 45px 15px rgba(0, 0, 0, 0.55) inset;
+  position: relative;
+}
+
+/* Brand name starts */
+.brand {
+  position: absolute;
+  width: 12%;
+  max-height: 2%;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand .brand-name {
+  color: goldenrod;
+  font-size: 1.7rem;
+}
+/* Brand name ends */
+
+/* Clock hands starts */
+.clock::after {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background-color: #000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.3) inset,
+    0 0 3px 2px rgba(0, 0, 0, 0.25);
+  z-index: 11;
+}
+
+.hands-el {
+    --rotation: 0;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+  transform-origin: bottom;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 1px 15px 6px 1px rgba(0, 0, 0, 0.3);
+}
+
+.hour-hand {
+  background-color: #000;
+  height: 35%;
+  width: 10px;
+  z-index: 8;
+}
+.minute-hand {
+  background-color: #000;
+  height: 40%;
+  width: 6px;
+  z-index: 9;
+}
+.second-hand {
+  background-color: red;
+  height: 45%;
+  width: 4px;
+  z-index: 10;
+}
+/* Clock hands ends */
+
+/* Digital clock starts */
+.digital {
+  position: absolute;
+  height: 10%;
+  width: 30%;
+  left: 50%;
+  top: 70%;
+  transform: translate(-50%, -30%);
+  background-color: #2c3e50;
+  box-shadow: 0 0 6px 5px rgba(0, 0, 0, 0.65) inset;
+  border-radius: 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.digital .digital-el {
+  display: block;
+  width: 30%;
+  color: rgb(237, 237, 237);
+  font-size: 1.5rem;
+}
+
+.digital .digital-divider {
+  width: 4%;
+  color: rgb(194, 193, 193);
+}
+
+.digital span {
+  text-align: center;
+}
+/* Digital clock ends */
+
+/* numbers start */
+.numbers {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.number-el {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  font-size: 1.5rem;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.hour-count {
+  display: inline-block;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.number-12 {
+  font-size: 3rem;
+  color: red;
+  font-weight: 300 !important;
+}
+
+.number-3,
+.number-6,
+.number-9 {
+  font-size: 2.5rem;
+  font-weight: 400 !important;
+}
+/* numbers end */
